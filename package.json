@@ -1,0 +1,29 @@
+{
+  "name": "null-volgy-null-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node lib/index.js",
+    "lint": "standard",
+    "lint:fix": "standard --fix"
+  },
+  "keywords": [],
+  "author": "Dávid Szabó <david@littledavid.io> (https://littledavid.io)",
+  "license": "ISC",
+  "lint-staged": {
+    "lib/**/*.js": "npm run lint:fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "discord.js": "^12.0.1"
+  },
+  "devDependencies": {
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8"
+  }
+}
