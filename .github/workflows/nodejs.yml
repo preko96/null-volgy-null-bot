@@ -10,12 +10,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node: [ '12.x', '13.x' ]
+
     steps:
     - uses: actions/checkout@v2
-    - name: Use LTS Node.js
+    - name: Use Node.js ${{ matrix.node }}
       uses: actions/setup-node@v1
       with:
-        node-version: lts
+        node-version: ${{ matrix.node }}
     - run: npm ci
     - run: npm run lint
       env:
